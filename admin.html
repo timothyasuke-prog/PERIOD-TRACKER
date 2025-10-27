@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin - Period Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Admin Dashboard</h1>
+    <div class="actions">
+      <a href="index.html">App</a>
+    </div>
+  </header>
+  <main class="container admin-container">
+    <section class="auth" id="login-section">
+      <h2>Admin Login</h2>
+      <input id="admin-username" placeholder="username" />
+      <input id="admin-password" placeholder="password" type="password" />
+      <button id="admin-login">Login</button>
+      <p id="login-msg"></p>
+    </section>
+
+    <section id="dashboard" style="display:none">
+      <h2>Statistics</h2>
+      <canvas id="chart-cycles" height="100"></canvas>
+      <canvas id="chart-moods" height="100"></canvas>
+
+      <h3>Users (local devices)</h3>
+      <div id="users-list"></div>
+
+      <h3>Feedback</h3>
+      <div id="feedback-list"></div>
+
+      <h3>Manage Tips & Quotes</h3>
+      <textarea id="admin-quotes" rows="4"></textarea>
+      <button id="save-quotes">Save Quotes (publish)</button>
+      <p><small>Saved quotes are written to localStorage; to publish globally, host <code>public-quotes.json</code> on a public URL.</small></p>
+
+      <h3>Localization</h3>
+      <label>Default language: <input id="default-lang" placeholder="en"/></label>
+      <textarea id="translations" rows="6" placeholder='{"en":{"tip":"..."},"es":{}}'></textarea>
+      <button id="save-translations">Save Translations</button>
+
+      <h3>Announcements</h3>
+      <input id="ann-title" placeholder="Title" />
+      <textarea id="ann-text" rows="3" placeholder="Announcement text"></textarea>
+      <button id="post-ann">Post Announcement (local)</button>
+      <button id="export-ann">Export announcements (publish)</button>
+
+      <h3>Advanced Analytics</h3>
+      <div id="analytics-controls">
+        <button id="run-analytics">Run Analytics</button>
+      </div>
+      <div id="analytics-output"></div>
+    </section>
+  </main>
+  <footer>
+    <div class="copyright">© 2025 Period Tracker. All rights reserved.</div>
+  </footer>
+
+  <script src="admin.js" defer></script>
+</body>
+</html>

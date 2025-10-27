@@ -1,0 +1,28 @@
+:root{
+  --bg:#fff; --text:#111; --muted:#666; --accent:#c44;
+}
+[data-theme="dark"]{
+  --bg:#0f1115; --text:#e6e6e6; --muted:#a9a9a9; --accent:#ff8da1;
+}
+*{box-sizing:border-box}
+body{font-family:system-ui,Segoe UI,Arial; margin:0; background:var(--bg); color:var(--text)}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:linear-gradient(90deg,var(--accent),#f3c);color:#fff}
+.container{display:flex;gap:18px;padding:18px}
+.left{flex:1}
+.right{width:320px}
+#calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.day{padding:10px;border-radius:6px;background:rgba(255,255,255,0.06);text-align:center;cursor:pointer}
+.day.period{background:linear-gradient(180deg,var(--accent),#ffb3b3)}
+.day.today{outline:2px solid var(--accent)}
+.controls{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:8px}
+button{padding:8px 10px;border-radius:6px;border:1px solid transparent;background:#fff;cursor:pointer}
+[data-theme="dark"] button{background:#222;color:var(--text)}
+textarea{width:100%;min-height:80px}
+.admin-container canvas{max-width:700px}
+@media(max-width:800px){.container{flex-direction:column}.right{width:100%}}
+
+/* modal */
+.modal{position:fixed;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center}
+.modal-content{background:var(--bg);padding:16px;border-radius:8px;max-width:320px;width:100%;color:var(--text)}
+
+.copyright{margin-top:8px;color:var(--muted);font-size:12px;text-align:center}
